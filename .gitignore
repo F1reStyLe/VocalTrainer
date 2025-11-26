@@ -1,0 +1,49 @@
+# === Сборка и временные файлы CMake ===
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build.ninja
+.ninja_*
+compile_commands.json
+
+# === Исполняемые файлы и библиотеки ===
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+
+# === Qt-специфичные файлы ===
+*.autosave
+*.pro.user
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+CMakeFiles/
+*.qrc.cpp
+
+# === IDE и редакторы ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === MSYS2 / MinGW / Windows ===
+Thumbs.db
+Desktop.ini
+*.manifest
+*.res
+
+# === Логи и отладка ===
+*.log
+debug/
+release/
+Debug/
+Release/
+
+# === Qt Creator (если используется) ===
+*.pro.user.*
