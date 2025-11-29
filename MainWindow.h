@@ -1,14 +1,18 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#define _USE_MATH_DEFINES
 
-#include <cmath>
-#include <portaudio.h>
 #include <QMainWindow>
 #include <QSlider>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWidget>
+#include "portaudio.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui
+{
+   class MainWindow;
+}
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -20,11 +24,16 @@ public:
 
 private slots:
    void onFrequencyChanged(int value);
+   void onTogglePlayback();
 
 private:
-   QSlider *m_slider;
+   QSlider *m_slider = nullptr;
+   QPushButton *m_toggleButton = nullptr;
+
    PaStream *m_stream = nullptr;
    double m_currentFreq = 440.0;
+   double m_phase = 0.0;
+   bool m_isPlaying = false;
    static int audioCallback(const void *input, void *output,
                             unsigned long frameCount,
                             const PaStreamCallbackTimeInfo *timeInfo,
